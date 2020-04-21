@@ -1,0 +1,26 @@
+ul {
+    width: 40%;
+    overflow-y: auto;
+}
+
+li:hover {
+    filter: brightness(95%);
+}
+
+@media (max-width: 575.98px) { 
+    ul {
+        width: 460px !important;
+    }
+}
+
+@media (max-width: 767.98px) { 
+    ul {
+        width: 613.6px !important;
+    }
+}
+
+@media (max-width: 991.98px) { 
+    ul {
+        width: 396.8px !important;
+    }
+}
