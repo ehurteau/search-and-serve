@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Ingredient } from '../ingredient';
 import { INGREDIENTS } from '../INGREDIENTS';
+import { IngredientsService } from '../ingredients.service';
 
 @Component({
   selector: 'app-ingredients-list',
@@ -8,9 +9,10 @@ import { INGREDIENTS } from '../INGREDIENTS';
   styleUrls: ['./ingredients-list.component.css']
 })
 export class IngredientsListComponent implements OnInit {
-  ingredients: Ingredient[]; // list to store ingredients
+  ingredientsDB: Ingredient[] = []; // list to store ingredients
+  userIngredients: Ingredient[] = []; // a user's list of ingredients
 
-  constructor() { }
+  constructor(private ingredientsService: IngredientsService) { }
 
   ngOnInit() {
     this.getIngredients();
@@ -19,24 +21,32 @@ export class IngredientsListComponent implements OnInit {
   /**
    * Return the list of ingredients
    */
-  getIngredients() {
-    this.ingredients = INGREDIENTS; // TODO: implement service in future use
+  getIngredients(): Ingredient[] {
+    return this.ingredientsDB = this.ingredientsService.getIngredients();
   }
   
   /**
    * Return an ingredient from the ingredients list
    * @param id the id of the ingredient
    */
-  getIngredient(id: number) {
-    this.ingredients.find(ingredient => id == ingredient.id) // TODO: implement service in future use
+  getIngredient(id: number): Ingredient {
+    return this.ingredientsService.getIngredient(id);
   }
   
   /**
    * Remove an ingredient from the ingredients list
    * @param id the id of the ingredient
    */
-  removeIngredient(id: number) {
-    this.ingredients.filter( ingredient => id != ingredient.id); // TODO: implement service in future use
+  removeIngredient(id: number): void {
+    this.userIngredients = this.ingredientsService.removeIngredient(id, this.userIngredients);
+  }
+
+  /**
+   * Add an ingredient to the ingredients list
+   * @param name the id of the ingredient
+   */
+  addIngredient(name: string): void {
+    this.ingredientsService.addIngredient(name);
   }
 
 }

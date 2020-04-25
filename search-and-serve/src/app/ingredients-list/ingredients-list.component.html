@@ -1,10 +1,16 @@
-<h1 class="text-center">Your Ingredients</h1>
-<div class="m-5 d-inline">
-    <ul class="list-group mx-auto align-middle">
-        <li *ngFor="let ingredient of ingredients" class="list-group-item">{{ ingredient.name }}</li>
-    </ul>
-    <div class="text-center m-3">
-        <button class="btn btn-primary"><i class="fas fa-plus mr-2"></i>Add Ingredient</button>
+<div class="container">
+    <h1 class="text-center">Your Ingredients</h1>
+    <div class="m-5 d-inline">
+        <ul class="list-group mx-auto align-middle">
+            <li *ngIf="!userIngredients.length" class="list-group-item text-center">
+                <i class="text-black-50">You don't have any ingredients added. Click the add button below to add some!</i>
+            </li>
+            <li *ngFor="let ingredient of userIngredients" class="list-group-item">{{ ingredient.name }}</li>
+        </ul>
+        <div class="text-center m-3">
+            <button class="btn btn-primary"><i class="fas fa-plus mr-2"></i>Add Ingredient</button>
+        </div>
     </div>
-</div>  
+</div>
+  
 
