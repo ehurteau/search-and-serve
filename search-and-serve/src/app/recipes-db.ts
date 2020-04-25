@@ -9,7 +9,7 @@ export var Recipes: Recipe[]=[
     timeToPrepare: 35,
     description:'test recipe please ignore',
     id:0,
-    image: "src/assets/images/image_1.jpg"
+    image: "assets/images/image_1.jpg"
 
 },{
     diet:'keto',
@@ -19,7 +19,7 @@ export var Recipes: Recipe[]=[
     timeToPrepare:120,
     description:'I love this recipe I love this recipe I love this recipe I love this recipe I love this recipe I love this recipe', 
     id:1,
-    image: "src/assets/images/image_2.jpg"
+    image: "assets/images/image_2.jpg"
 },{
     name:'recipe1',
     diet: 'halal',
@@ -28,7 +28,7 @@ export var Recipes: Recipe[]=[
     timeToPrepare: 35,
     description:'test recipe please ignore',
     id:0,
-    image: "src/assets/images/image_2.jpg"
+    image: "assets/images/image_2.jpg"
 
 },{
     diet:'keto',
@@ -38,7 +38,7 @@ export var Recipes: Recipe[]=[
     timeToPrepare:120,
     description:'I love this recipe I love this recipe I love this recipe I love this recipe I love this recipe I love this recipe', 
     id:1,
-    image: "src/assets/images/image_4"
+    image: "assets/images/image_4.jpg"
 },{
     name:'recipe1',
     diet: 'halal',
@@ -47,7 +47,7 @@ export var Recipes: Recipe[]=[
     timeToPrepare: 35,
     description:'test recipe please ignore',
     id:0,
-    image: "src/assets/images/image_6"
+    image: "assets/images/image_6.jpg"
 
 },{
     diet:'keto',
@@ -57,7 +57,7 @@ export var Recipes: Recipe[]=[
     timeToPrepare:120,
     description:'I love this recipe I love this recipe I love this recipe I love this recipe I love this recipe I love this recipe', 
     id:1,
-    image: "src/assets/images/image_4"
+    image: "assets/images/image_4.jpg"
 },{
     name:'recipe1',
     diet: 'halal',
@@ -66,7 +66,7 @@ export var Recipes: Recipe[]=[
     timeToPrepare: 35,
     description:'test recipe please ignore',
     id:0,
-    image: "src/assets/images/image_6"
+    image: "assets/images/image_6.jpg"
 
 },{
     diet:'keto',
@@ -76,7 +76,7 @@ export var Recipes: Recipe[]=[
     timeToPrepare:120,
     description:'I love this recipe I love this recipe I love this recipe I love this recipe I love this recipe I love this recipe', 
     id:1,
-    image: "src/assets/images/image_4"
+    image:  "assets/images/image_4.jpg"
 },{
     name:'recipe1',
     diet: 'halal',
@@ -85,7 +85,7 @@ export var Recipes: Recipe[]=[
     timeToPrepare: 35,
     description:'test recipe please ignore',
     id:0,
-    image: "src/assets/images/image_6"
+    image:  "assets/images/image_6.jpg"
 
 },{
     diet:'keto',
@@ -95,7 +95,7 @@ export var Recipes: Recipe[]=[
     timeToPrepare:120,
     description:'I love this recipe I love this recipe I love this recipe I love this recipe I love this recipe I love this recipe', 
     id:1,
-    image: "src/assets/images/image_3"
+    image:  "assets/images/image_3.jpg"
 },{
     name:'recipe1',
     diet: 'halal',
@@ -104,7 +104,7 @@ export var Recipes: Recipe[]=[
     timeToPrepare: 35,
     description:'test recipe please ignore',
     id:0,
-    image: "src/assets/images/image_1"
+    image:  "assets/images/image_1.jpg"
 
 },{
     diet:'keto',
@@ -114,7 +114,7 @@ export var Recipes: Recipe[]=[
     timeToPrepare:120,
     description:'I love this recipe I love this recipe I love this recipe I love this recipe I love this recipe I love this recipe', 
     id:1,
-    image: "src/assets/images/image_4"
+    image:  "assets/images/image_4.jpg"
 },{
     name:'recipe1',
     diet: 'halal',
@@ -123,7 +123,7 @@ export var Recipes: Recipe[]=[
     timeToPrepare: 35,
     description:'test recipe please ignore',
     id:0,
-    image: "src/assets/images/image_1"
+    image:  "assets/images/image_1.jpg"
 
 },{
     diet:'keto',
@@ -133,7 +133,7 @@ export var Recipes: Recipe[]=[
     timeToPrepare:120,
     description:'I love this recipe I love this recipe I love this recipe I love this recipe I love this recipe I love this recipe', 
     id:1,
-    image: "src/assets/images/image_2"
+    image:  "assets/images/image_2.jpg"
 },{
     name:'recipe1',
     diet: 'halal',
@@ -142,7 +142,7 @@ export var Recipes: Recipe[]=[
     timeToPrepare: 35,
     description:'test recipe please ignore',
     id:0,
-    image: "src/assets/images/image_4"
+    image:  "assets/images/image_4.jpg"
 
 },{
     diet:'keto',
@@ -152,7 +152,7 @@ export var Recipes: Recipe[]=[
     timeToPrepare:120,
     description:'I love this recipe I love this recipe I love this recipe I love this recipe I love this recipe I love this recipe', 
     id:1,
-    image: "src/assets/images/image_4"
+    image:  "assets/images/image_4.jpg"
 },{
     name:'recipe1',
     diet: 'halal',
@@ -161,7 +161,7 @@ export var Recipes: Recipe[]=[
     timeToPrepare: 35,
     description:'test recipe please ignore',
     id:0,
-    image: "src/assets/images/image_4"
+    image:  "assets/images/image_4.jpg"
 
 },{
     diet:'keto',
@@ -171,7 +171,7 @@ export var Recipes: Recipe[]=[
     timeToPrepare:120,
     description:'I love this recipe I love this recipe I love this recipe I love this recipe I love this recipe I love this recipe', 
     id:1,
-    image: "src/assets/images/image_3"
+    image:  "assets/images/image_3.jpg"
 },{
     name:'recipe1',
     diet: 'halal',
@@ -180,7 +180,7 @@ export var Recipes: Recipe[]=[
     timeToPrepare: 35,
     description:'test recipe please ignore',
     id:0,
-    image: "src/assets/images/image_5"
+    image:  "assets/images/image_5.jpg"
 
 },{
     diet:'keto',
@@ -190,7 +190,7 @@ export var Recipes: Recipe[]=[
     timeToPrepare:120,
     description:'I love this recipe I love this recipe I love this recipe I love this recipe I love this recipe I love this recipe', 
     id:1,
-    image: "src/assets/images/image_6"
+    image:  "assets/images/image_6.jpg"
 },{
     name:'recipe1',
     diet: 'halal',
@@ -199,7 +199,7 @@ export var Recipes: Recipe[]=[
     timeToPrepare: 35,
     description:'test recipe please ignore',
     id:0,
-    image: "src/assets/images/image_2"
+    image:  "assets/images/image_2.jpg"
 
 },{
     diet:'keto',
@@ -209,7 +209,7 @@ export var Recipes: Recipe[]=[
     timeToPrepare:120,
     description:'I love this recipe I love this recipe I love this recipe I love this recipe I love this recipe I love this recipe', 
     id:1,
-    image: "src/assets/images/image_3"
+    image:  "assets/images/image_3.jpg"
 },{
     name:'recipe1',
     diet: 'halal',
@@ -218,7 +218,7 @@ export var Recipes: Recipe[]=[
     timeToPrepare: 35,
     description:'test recipe please ignore',
     id:0,
-    image: "src/assets/images/image_6"
+    image:  "assets/images/image_6.jpg"
 
 }
 ]
