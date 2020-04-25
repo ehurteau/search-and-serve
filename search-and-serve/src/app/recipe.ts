@@ -8,7 +8,7 @@ export type Recipe={
     diet: Diet,
     type: Type
     description: string,
-    id: number
-    //need to include image still
+    id: number,
+    image: string
 
 }

@@ -14,9 +14,13 @@ export class RecipeSearchComponent implements OnInit {
     diet:'vegetarian',
     rating:0,
     timeToPrepare:0,
-    type: 'baked'
+    type: 'baked',
+    id:-400,
+    image:""
 
   };
+
+  fam=this.recipe.image;
 
   
   constructor() { }

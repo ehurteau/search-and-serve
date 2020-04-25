@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
     import { RouterModule, Routes } from '@angular/router';
     import { DashboardComponent } from './dashboard/dashboard.component'
     import { AddRecipeComponent } from './add-recipe/add-recipe.component';
-import { IngredientsComponent } from './ingredients/ingredients.component';
+//import { IngredientsComponent } from './ingredients/ingredients.component';
 
     const routes: Routes = [
         {
@@ -11,10 +11,10 @@ import { IngredientsComponent } from './ingredients/ingredients.component';
         },{
             path:'add-recipe',
             component: AddRecipeComponent
-        },{
-            path: 'ingredients',
-            component: IngredientsComponent
-        }
+        }//,{
+        //     path: 'ingredients',
+        //     component: IngredientsComponent
+        // }
     ];
 
     @NgModule({
