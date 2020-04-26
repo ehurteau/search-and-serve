@@ -1,6 +1,16 @@
 <div class="container">
     <h1 class="text-center">Your Ingredients</h1>
     <div class="m-5 d-inline">
+        <div class="text-center">
+            <div *ngIf="!ingredientsFound.length && userIngredients.length > 1" class="btn-group">
+                    <button  class="btn btn-light"
+                        data-toggle="tooltip" data-placement="bottom"
+                        title="Sort ascending" (click)="sortList(true)">Sort Ascending<i class="fas fa-sort-alpha-up fa-lg ml-1"></i></button>
+                    <button class="btn btn-light"
+                        data-toggle="tooltip" data-placement="bottom"
+                        title="Sort descending" (click)="sortList(false)">Sort Descending<i class="fas fa-sort-alpha-down-alt fa-lg ml-1"></i></button>
+            </div>
+        </div>
         <div class="form-group d-flex mt-3 mb-3 justify-content-center">
             <i class="fas fa-search fa-lg text-primary align-self-center mr-1"></i>
             <input #searchBox class="form-control"
@@ -12,17 +22,21 @@
             No ingredients with "{{ searchBox.value }}" are in your list. You can add "{{ searchBox.value }}"
             by clicking the <span class="text-primary"><b>Add Ingredient</b></span> button below. 
         </p>
-        <ul class="list-group mx-auto align-middle">
-            <li *ngIf="!userIngredients.length" class="list-group-item text-center">
-                <i class="text-black-50">You don't have any ingredients added. Click the add button below to add some!</i>
-            </li>
-            <li *ngFor="let ingredient of ( ingredientsFound.length ?  ingredientsFound : userIngredients )" class="list-group-item d-flex justify-content-between">
-                {{ ingredient.name }}
-                <i class="fas fa-trash-alt fa-lg text-danger align-self-center"
-                    data-toggle="tooltip" data-placement="left" title="remove ingredient"
-                    (click)="removeIngredient(ingredient.id)"></i>
-            </li>
-        </ul>
+        <div class="ingredient-list">
+            <ul class="list-group mx-auto align-middle">
+                <li *ngIf="!userIngredients.length" class="list-group-item text-center">
+                    <i class="text-black-50">You don't have any ingredients added. Click the add button below to add some!</i>
+                </li>
+                <div *ngFor="let ingredient of ( ingredientsFound.length ?  ingredientsFound : userIngredients )">
+                    <li class="list-group-item d-flex justify-content-between">
+                        {{ ingredient.name }}
+                        <i class="fas fa-trash-alt fa-lg text-danger align-self-center"
+                            data-toggle="tooltip" data-placement="left" title="remove ingredient"
+                            (click)="removeIngredient(ingredient.id)"></i>
+                    </li>
+                </div>
+            </ul>
+        </div>
         <div class="text-center m-3">
             <button class="btn btn-primary" data-toggle="modal" data-target="#addModal">
                 <i class="fas fa-plus mr-2"></i>Add Ingredient

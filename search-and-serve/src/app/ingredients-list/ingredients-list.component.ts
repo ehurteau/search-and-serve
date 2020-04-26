@@ -28,6 +28,26 @@ export class IngredientsListComponent implements OnInit {
   }
 
   /**
+   * Sorts the user's ingredients list in either ascending or descending order
+   * @param ascending whether list should be sorted in ascending order
+   */
+  sortList(ascending: boolean): void {
+    if(ascending) {
+      this.userIngredients.sort(function(a, b) {
+        if (a.name < b.name) { return -1; }
+        if (a.name > b.name) { return 1; }
+        return 0;
+      });
+    } else { // sort in descending order
+      this.userIngredients.sort(function(a, b) {
+        if (a.name < b.name) { return 1; }
+        if (a.name > b.name) { return -1; }
+        return 0;
+      });
+    }
+  }
+
+  /**
    * Return the list of ingredients
    */
   getIngredients(): Ingredient[] {
@@ -55,6 +75,7 @@ export class IngredientsListComponent implements OnInit {
    * @param name the id of the ingredient
    */
   addIngredient(name: string): void {
+    console.log("ADDING INGREDIENT");
     this.ingredientsService.addIngredient(name, this.userIngredients);
   }
 

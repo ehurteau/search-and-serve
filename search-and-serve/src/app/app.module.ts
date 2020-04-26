@@ -21,7 +21,7 @@ import { RegisterComponent } from './register/register.component';
     AddRecipeComponent,
     LoginComponent,
     RegisterComponent,
-    IngredientsAddComponent
+    IngredientsAddComponent,
   ],
   imports: [
     BrowserModule,
