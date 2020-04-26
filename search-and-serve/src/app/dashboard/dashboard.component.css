@@ -1,5 +1,14 @@
-.cards {
+/* .cards {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
-  }
+    justify-content: center;
+
+  } */
+
+.container {
+    text-align: center;
+    display: flex;
+    float: center;
+    flex-wrap: wrap;
+    justify-content: center;
+}

@@ -8,24 +8,23 @@ import { Recipe } from '../recipe';
 })
 
 export class RecipeSearchComponent implements OnInit {
-  @Input() recipe:Recipe ={
-    name:'filler',
-    description:"also filler",
-    diet:'vegetarian',
-    rating:0,
-    timeToPrepare:0,
-    type: 'baked',
-    id:-400,
-    image:""
-
-  };
-
-  fam=this.recipe.image;
-
+  @Input() recipe:Recipe ;
   
+  descriptionToSize:string="";
+  nameToSize:string="";
+
   constructor() { }
 
   ngOnInit(): void {
+    //make sure the showed strings fit in our card.
+    this.descriptionToSize=this.recipe.description;
+    this.nameToSize=this.recipe.name;
+    if(this.recipe.description.length > 80){
+      this.descriptionToSize=this.recipe.description.slice(0,60) + "...";
+    }
+    if(this.recipe.name.length>50){
+      this.nameToSize=this.recipe.name.slice(0,47)+"..."
+    }
   }
 
 }
