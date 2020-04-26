@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Ingredient } from '../ingredient';
-import { INGREDIENTS } from '../INGREDIENTS';
 import { IngredientsService } from '../ingredients.service';
 
 @Component({
@@ -46,7 +45,7 @@ export class IngredientsListComponent implements OnInit {
    * @param name the id of the ingredient
    */
   addIngredient(name: string): void {
-    this.ingredientsService.addIngredient(name);
+    this.ingredientsService.addIngredient(name, this.userIngredients);
   }
 
 }

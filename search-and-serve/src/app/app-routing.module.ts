@@ -13,8 +13,8 @@ const routes: Routes = [
         path:'add-recipe',
         component: AddRecipeComponent
     },{
-            path: 'ingredients',
-            component: IngredientsListComponent
+        path: 'ingredients',
+        component: IngredientsListComponent
     }
 ];
 

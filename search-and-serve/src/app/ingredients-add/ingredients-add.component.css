@@ -1,0 +1,25 @@
+li {
+    list-style-type: none;
+}
+
+.ingredient-list {
+    background-color: white;
+}
+
+.ingredient-list:hover {
+    filter: brightness(95%);
+    cursor: pointer;
+}
+
+.selected {
+    filter: brightness(90%);
+}
+
+.selected:hover {
+    filter: brightness(85%);
+}
+
+.added {
+    background-color: lightgreen;
+    color: white;
+}

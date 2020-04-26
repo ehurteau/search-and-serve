@@ -41,13 +41,41 @@ export class IngredientsService {
   }
 
   /**
-   * Add an ingredient to the ingredients list
+   * Add an ingredient to an ingredients list. If the ingredient does not exist yet,
+   * then create a new Ingredient and add to the list and ingredients database.
    * @param name the id of the ingredient
+   * @param list list of ingredients to add the ingredient to
    */
-  addIngredient(name: string): void {
-    let id = this.gendId();
-    let newIngredient: Ingredient = { id:  id, name: name };
-    this.ingredients.push(newIngredient);
+  addIngredient(name: string, list: Ingredient[]): void {
+    if (!this.ingredientExists(name, this.ingredients)) {
+      let id = this.gendId();
+      let newIngredient: Ingredient = { id:  id, name: name };
+      this.ingredients.push(newIngredient);
+      list.push(newIngredient);
+    } else {
+      list.push(this.ingredients.find(i => i.name == name));
+    }
+  }
+
+  /**
+   * Returns true if ingredient already exists, and false otherwise
+   * @param name name of an ingredient
+   */
+  ingredientExists(name: string, list: Ingredient[]): boolean {
+    return list.find(i => i.name == name) != undefined;
+  }
+
+  /**
+   * Search through the ingredients database
+   * @param term search term
+   * @returns list of ingredients found
+   */
+  searchIngredients(term: string): Ingredient[] {
+    if (!term.trim()) {
+      return [];
+    }
+
+    return this.ingredients.filter(ingredient => ingredient.name.includes(term.trim()));
   }
 
 }

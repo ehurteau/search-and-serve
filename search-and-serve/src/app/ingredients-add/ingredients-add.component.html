@@ -1,17 +1,56 @@
-<div class="modal-dialog modal-dialog-centered" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
+<div class="modal-dialog modal-dialog-centered" data-target="#addModal" role="document">
+  <div class="modal-content">
+    <div class="modal-header">
+      <div class="flex-col">
         <h5 class="modal-title">Add Ingredient</h5>
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-          <span aria-hidden="true">&times;</span>
-        </button>
+        <small class="text-black-50"><i>Search for ingredients to add below.</i></small>
       </div>
-      <div class="modal-body">
-        <p>Modal body text goes here.</p>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-        <button type="button" class="btn btn-primary">Save changes</button>
-      </div>
+      <button type="button" (click)="searchBox.value=''" class="close flex-col" data-dismiss="modal" aria-label="Close">
+        <span aria-hidden="true">&times;</span>
+      </button>
     </div>
+    <div class="modal-body">
+      <h5 class="text-secondary">Search Ingredients</h5>
+      <div class="form-group mx-auto mt-3">
+        <input #searchBox class="form-control"
+              type="text"
+              placeholder="Search by ingredient"
+              (keyup)="search(searchBox.value)">
+      </div>
+      
+      <p class="text-center text-black-50" *ngIf="searchBox.value.trim() && !ingredientsFound.length">
+        No results found for "{{ searchBox.value }}". Try a different search term or create "{{ searchBox.value }}"
+        by clicking the <span class="text-primary"><b>Add Ingredient</b></span> button. 
+      </p>
+
+      <div *ngIf="searchBox.value && ingredientsFound.length">
+        <p class="text-black-50">
+          <i>{{ ingredientsFound.length }} results found for "{{ searchBox.value }}".</i>
+        </p>
+        <p class="text-black-50">
+          To add an ingredient, select an ingredient from the list then
+          click the <span class="text-primary"><b>Add Ingredient</b></span> button.
+          Ingredients that you already own are highlighted in green.
+        </p>
+        <ul>
+          <div *ngFor="let ingredient of ingredientsFound">
+            <div (click)="onSelect(ingredient.name)" class="ingredient-list p-3" 
+              [class.selected]="ingredient.name === selectedIngredient"
+              [class.added]="ingredientExists(ingredient.name)">
+              <li>{{ ingredient.name }}</li>
+            </div>
+            <hr *ngIf="ingredientsFound.indexOf(ingredient) != ingredientsFound.length - 1" class="m-0">
+          </div>
+        </ul>
+      </div>
+      <p *ngIf="selectionError" class="text-danger">You already have this ingredient. Please select something else and try again.</p>
+      <p *ngIf="termError" class="text-danger">You already have this ingredient. Please type in something else and try again.</p>
+    </div>
+      <div class="modal-footer">
+          <button type="button" (click)="searchBox.value=''" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" (click)="addIngredient(searchBox.value); searchBox.value=''"
+            [disabled]="!searchBox.value.trim().length"
+            class="btn btn-primary">Add Ingredient</button>
+      </div>
   </div>
+</div>
