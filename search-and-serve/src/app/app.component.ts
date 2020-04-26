@@ -6,5 +6,18 @@ import { Component } from '@angular/core';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'search-and-serve';
+  title = 'Search and Serve';
+
+  ngAfterViewChecked() {
+    (<any>$('[data-toggle="tooltip"]')).tooltip({
+      trigger: 'hover'
+    });
+    $('[data-toggle="tooltip"]').on('mouseleave', function () {
+      (<any>$(this)).tooltip('dispose');
+    });
+    $('[data-toggle="tooltip"]').on('click', function () {
+      (<any>$(this)).tooltip('dispose');
+    });
+  }
+  
 }

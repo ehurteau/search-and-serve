@@ -32,12 +32,12 @@ export class IngredientsService {
   }
   
   /**
-   * Remove an ingredient from a user's ingredients list
+   * Remove an ingredient from the specified ingredients list
    * @param id the id of the ingredient
    * @param list the user's ingredient list
    */
   removeIngredient(id: number, list: Ingredient[]): Ingredient[] {
-    return list = list.filter(ingredient => id != ingredient.id);
+    return list.filter(ingredient => id != ingredient.id);
   }
 
   /**

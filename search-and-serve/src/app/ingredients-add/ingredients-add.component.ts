@@ -61,10 +61,17 @@ export class IngredientsAddComponent implements OnInit {
       this.getIngredientName(this.selectedIngredient);
     }
     this.selectedIngredient = '';
+    this.termError = false;
+    this.selectionError = false;
     (<any>$('#addModal')).modal('hide');
   }
 
-  onSelect(ingredient: string) {
+  /**
+   * Update the selectedIngredient.
+   * termError is also set to false, and selectionError is set to false if item is deselected.
+   * @param ingredient name of an ingredient
+   */
+  onSelect(ingredient: string): void {
     this.termError = false;
 
     if (ingredient == this.selectedIngredient) {
@@ -85,7 +92,7 @@ export class IngredientsAddComponent implements OnInit {
    * Returns true if ingredient already exists, and false otherwise
    * @param name name of an ingredient
    */
-  ingredientExists(name: string) {
+  ingredientExists(name: string): boolean {
     return this.ingredientsService.ingredientExists(name, this.ingredients);
   }
 

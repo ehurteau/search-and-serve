@@ -5,7 +5,12 @@
             <li *ngIf="!userIngredients.length" class="list-group-item text-center">
                 <i class="text-black-50">You don't have any ingredients added. Click the add button below to add some!</i>
             </li>
-            <li *ngFor="let ingredient of userIngredients" class="list-group-item">{{ ingredient.name }}</li>
+            <li *ngFor="let ingredient of userIngredients" class="list-group-item d-flex justify-content-between">
+                {{ ingredient.name }}
+                <i class="fas fa-trash-alt fa-lg text-danger align-self-center"
+                    data-toggle="tooltip" data-placement="left" title="remove ingredient"
+                    (click)="removeIngredient(ingredient.id)"></i>
+            </li>
         </ul>
         <div class="text-center m-3">
             <button class="btn btn-primary" data-toggle="modal" data-target="#addModal">
@@ -15,6 +20,8 @@
     </div>
 </div>
 
-<app-ingredients-add class="modal fade" id="addModal" tabindex="-1" role="dialog" [ingredients]="userIngredients" (addEvent)="addIngredient($event)"></app-ingredients-add>
+<app-ingredients-add class="modal fade" id="addModal" tabindex="-1" role="dialog"
+    [ingredients]="userIngredients"
+    (addEvent)="addIngredient($event)"></app-ingredients-add>
 
 
