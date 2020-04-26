@@ -66,13 +66,18 @@ export class IngredientsService {
   }
 
   /**
-   * Search through the ingredients database
+   * Search through the ingredients list, or the ingredients database if a list is specified
    * @param term search term
+   * @param list list to search through
    * @returns list of ingredients found
    */
-  searchIngredients(term: string): Ingredient[] {
+  searchIngredients(term: string, list?: Ingredient[]): Ingredient[] {
     if (!term.trim()) {
       return [];
+    }
+
+    if (list) {
+      return list.filter(ingredient => ingredient.name.includes(term.trim()));
     }
 
     return this.ingredients.filter(ingredient => ingredient.name.includes(term.trim()));

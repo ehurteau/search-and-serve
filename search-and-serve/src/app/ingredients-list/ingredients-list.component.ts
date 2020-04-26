@@ -11,10 +11,20 @@ export class IngredientsListComponent implements OnInit {
   ingredientsDB: Ingredient[] = []; // list to store ingredients
   userIngredients: Ingredient[] = []; // a user's list of ingredients
 
+  ingredientsFound: Ingredient[] = []; // search results
+
   constructor(private ingredientsService: IngredientsService) { }
 
   ngOnInit() {
     this.getIngredients();
+  }
+
+  /**
+   * Searches through the user's ingredients list
+   * @param term name of the ingredient to search for
+   */
+  search(term: string): void {
+    this.ingredientsFound = this.ingredientsService.searchIngredients(term.toLowerCase(), this.userIngredients);
   }
 
   /**

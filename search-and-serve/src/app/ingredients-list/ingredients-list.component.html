@@ -1,11 +1,22 @@
 <div class="container">
     <h1 class="text-center">Your Ingredients</h1>
     <div class="m-5 d-inline">
+        <div class="form-group d-flex mt-3 mb-3 justify-content-center">
+            <i class="fas fa-search fa-lg text-primary align-self-center mr-1"></i>
+            <input #searchBox class="form-control"
+                type="text"
+                placeholder="Search your ingredients list"
+                (keyup)="search(searchBox.value)">
+        </div>
+        <p class="text-center text-black-50" *ngIf="searchBox.value.trim() && !ingredientsFound.length">
+            No ingredients with "{{ searchBox.value }}" are in your list. You can add "{{ searchBox.value }}"
+            by clicking the <span class="text-primary"><b>Add Ingredient</b></span> button below. 
+        </p>
         <ul class="list-group mx-auto align-middle">
             <li *ngIf="!userIngredients.length" class="list-group-item text-center">
                 <i class="text-black-50">You don't have any ingredients added. Click the add button below to add some!</i>
             </li>
-            <li *ngFor="let ingredient of userIngredients" class="list-group-item d-flex justify-content-between">
+            <li *ngFor="let ingredient of ( ingredientsFound.length ?  ingredientsFound : userIngredients )" class="list-group-item d-flex justify-content-between">
                 {{ ingredient.name }}
                 <i class="fas fa-trash-alt fa-lg text-danger align-self-center"
                     data-toggle="tooltip" data-placement="left" title="remove ingredient"
