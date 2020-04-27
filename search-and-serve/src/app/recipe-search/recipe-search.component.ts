@@ -1,6 +1,8 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Recipe } from '../recipe';
-
+import { Router, ActivatedRoute, ParamMap } from '@angular/router';
+import { DataService } from '../data.service';
+import{Location} from '@angular/common';
 @Component({
   selector: 'app-recipe-search',
   templateUrl: './recipe-search.component.html',
@@ -13,10 +15,10 @@ export class RecipeSearchComponent implements OnInit {
   descriptionToSize:string="";
   nameToSize:string="";
 
-  constructor() { }
+  constructor(  ) { }
 
   ngOnInit(): void {
-    //make sure the showed strings fit in our card.
+    //makes sure the showed strings fit in our card.
     this.descriptionToSize=this.recipe.description;
     this.nameToSize=this.recipe.name;
     if(this.recipe.description.length > 80){
@@ -25,6 +27,6 @@ export class RecipeSearchComponent implements OnInit {
     if(this.recipe.name.length>50){
       this.nameToSize=this.recipe.name.slice(0,47)+"..."
     }
+   
   }
-
 }

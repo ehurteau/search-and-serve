@@ -1,4 +1,4 @@
-<div class="card" style="width: 18rem;">
+<a routerLink="/recipe/{{recipe.id}}" class="card" style="width: 18rem;">
   <img class="card-img-top" src="{{recipe.image}}" alt="Card image cap">
   <div class="card-body">
     <h5 class="card-title">{{nameToSize}}</h5>
@@ -6,4 +6,4 @@
     <p class="card-subtitle mb2 text-muted">{{recipe.rating}} stars</p>
     <p class="card-text">{{descriptionToSize}}</p>
   </div>
-</div>
+</a>
