@@ -1,14 +1,16 @@
 import { Diet, Type } from "./modifiers"
+import { Ingredient } from './ingredient'
 
-//placeholder recipe type, can be replaced later
-export type Recipe={
-    name:string,
-    timeToPrepare:number,
-    rating:number,
-    diet: Diet,
-    type: Type
-    description: string,
+export type Recipe = {
     id: number,
-    image: string
-
+    title: string,
+    author: string,
+    timeToPrepare: number, // in minutes
+    rating: number,
+    diet: Diet,
+    type: Type,
+    description: string,
+    ingredients: Map<Ingredient, { quantity: number, measurement: string }>, // map of Ingredients and quantity/measurement of each
+    instructions: string
+    imageURL: string,
 }

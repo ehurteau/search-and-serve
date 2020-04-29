@@ -21,8 +21,11 @@ export class RecipeComponent implements OnInit {
     this.getRecipe();
   }
 
-  getRecipe(): void{
+  /**
+   * Get recipe according to its id from the local path
+   */
+  getRecipe(): void {
     const id = +this.route.snapshot.paramMap.get('id');
-    this.recipe=this.privateService.getRecipe(id)
-    } 
+    this.recipe = this.privateService.getRecipe(id)
+  } 
 }
