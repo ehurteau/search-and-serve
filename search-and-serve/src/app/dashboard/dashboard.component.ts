@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Recipes } from '../recipes-db'
+import { RECIPES } from '../recipes-db'
 
 @Component({
   selector: 'app-dashboard',
@@ -7,11 +7,11 @@ import { Recipes } from '../recipes-db'
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent implements OnInit {
+  recipes = RECIPES;
 
   constructor() { }
 
   ngOnInit() {
   }
 
-  recipes=Recipes;
 }

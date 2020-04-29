@@ -1,25 +1,28 @@
 import { Injectable } from '@angular/core';
 import { Recipe } from './recipe';
-import {Recipes} from './recipes-db';
+import { RECIPES } from './recipes-db';
 
 @Injectable({
   providedIn: 'root'
 })
 export class DataService {
 
-  data: Recipe={
-    name: "",
+  data: Recipe = {
+    title: "",
     description: "",
     diet: 'halal',
     id: null,
-    image: "",
+    imageURL: "",
     rating: null,
     timeToPrepare: null,
-    type:'baked'
+    type:'baked',
+    ingredients: null,
+    instructions: "",
+    author: "",
   }
   constructor() { }
 
-  getRecipe(id:number):Recipe{
-    return Recipes[id];
+  getRecipe(id: number): Recipe{
+    return RECIPES[id];
   }
 }

@@ -6,7 +6,7 @@ export type Recipe = {
     title: string,
     author: string,
     timeToPrepare: number, // in minutes
-    rating: number,
+    rating: { avgRating: number, numberOfRatings: number },
     diet: Diet,
     type: Type,
     description: string,
