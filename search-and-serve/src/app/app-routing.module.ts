@@ -3,7 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { DashboardComponent } from './dashboard/dashboard.component'
 import { AddRecipeComponent } from './add-recipe/add-recipe.component';
 import { IngredientsListComponent } from './ingredients-list/ingredients-list.component';
-
+import { RecipeComponent } from './recipe/recipe.component';
 
 const routes: Routes = [
     {

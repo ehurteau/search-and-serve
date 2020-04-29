@@ -11,6 +11,7 @@ import { RecipeSearchComponent } from './recipe-search/recipe-search.component';
 import { AddRecipeComponent } from './add-recipe/add-recipe.component';
 import { LoginComponent } from './login/login.component';
 import { RegisterComponent } from './register/register.component';
+import { RecipeComponent } from './recipe/recipe.component';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { RegisterComponent } from './register/register.component';
     LoginComponent,
     RegisterComponent,
     IngredientsAddComponent,
+    RecipeComponent
   ],
   imports: [
     BrowserModule,
