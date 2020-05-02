@@ -3,6 +3,8 @@ import { NgModule } from '@angular/core';
     import { DashboardComponent } from './dashboard/dashboard.component'
     import { AddRecipeComponent } from './add-recipe/add-recipe.component';
 import { RecipeComponent } from './recipe/recipe.component';
+import { LoginComponent } from './login/login.component';
+import { RegisterComponent } from './register/register.component';
 //import { IngredientsComponent } from './ingredients/ingredients.component';
 
     const routes: Routes = [
@@ -23,6 +25,12 @@ import { RecipeComponent } from './recipe/recipe.component';
         {
             path: 'recipe',
             component: RecipeComponent
+        },{
+            path: '',
+            component: LoginComponent
+        },{
+            path: 'register',
+            component: RegisterComponent
         }
     ];
 
